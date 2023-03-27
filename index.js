@@ -1,3 +1,8 @@
+function formatMoney(valor){
+    valor = valor.toFixed(2)
+    return 'R$ ' + valor
+}
+
 
 const main = document.getElementById('main');
 
@@ -13,9 +18,9 @@ main.addEventListener('input',function(){
     const tip_percent = document.getElementById('tipPercent').innerHTML = tipPercent + ' %'
     const tipNum = document.getElementById('splitValue').innerHTML = split + ' Person'
 
-    const resultTip = document.getElementById('tipValue').innerHTML = tipValue
-    const resultBillTotal = document.getElementById('totalWithTip').innerHTML = billTotal
-    const resultBillEach = document.getElementById('billEach').innerHTML = billEach
+    const resultTip = document.getElementById('tipValue').innerHTML = formatMoney(tipValue)
+    const resultBillTotal = document.getElementById('totalWithTip').innerHTML = formatMoney(billTotal)
+    const resultBillEach = document.getElementById('billEach').innerHTML = formatMoney(billEach)
 })
 
 
