@@ -1,6 +1,12 @@
 function formatMoney(valor){
+    Math.ceil(valor * 100) / 100 //Arredonda os valores das últimas casas decimais, pra cima.
     valor = valor.toFixed(2)
     return 'R$ ' + valor
+}
+
+function formatPeople(valor){
+    if (valor == 1) return valor + ' Person'
+    return valor + ' People'
 }
 
 
@@ -16,7 +22,7 @@ main.addEventListener('input',function(){
     const billEach = billTotal/split 
 
     const tip_percent = document.getElementById('tipPercent').innerHTML = tipPercent + ' %'
-    const tipNum = document.getElementById('splitValue').innerHTML = split + ' Person'
+    const tipNum = document.getElementById('splitValue').innerHTML = formatPeople(split)
 
     const resultTip = document.getElementById('tipValue').innerHTML = formatMoney(tipValue)
     const resultBillTotal = document.getElementById('totalWithTip').innerHTML = formatMoney(billTotal)
